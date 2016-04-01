@@ -28,7 +28,7 @@ export default {
       }
     },
     track () {
-      let trackWidth = this.value
+      let trackWidth = this.value * (this.width / 100)
       return {
         width: trackWidth + 'px'
       }
@@ -36,7 +36,7 @@ export default {
     untrack () {
       return {
         left: this.value + 'px',
-        width: 100 - this.value + 'px'
+        width: this.width - this.value + 'px'
       }
     }
   }
@@ -51,7 +51,7 @@ input[type="range"] {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100px;
+  width: 100%;
   appearance: none;
   background: transparent;
   height: 5px;
